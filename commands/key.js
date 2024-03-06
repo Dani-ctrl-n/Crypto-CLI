@@ -1,6 +1,23 @@
+const inquirer = require("inquirer");
+const KeyManager = require("../lib/KeyManager");
+const colors = require("colors");
+
 const key = {
-  set() {
-    console.log("Hello from set");
+  async set() {
+    const keyManager = new KeyManager();
+    const input = await inquirer.prompt([
+      {
+        type: "input",
+        name: "key",
+        message: "Enter your API Key ".green + "https://coinmarketcap.com",
+      },
+    ]);
+
+    const key = keyManager.setKey(input.key);
+
+    if (key) {
+      console.log("API Key set".blue);
+    }
   },
   show() {
     console.log("Hello from show");

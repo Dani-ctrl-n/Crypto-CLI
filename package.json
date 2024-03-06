@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Crypto converter",
   "main": "index.js",
-
   "bin": "./bin/coindex.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +13,7 @@
     "axios": "^1.6.7",
     "colors": "^1.4.0",
     "commander": "^12.0.0",
-    "config": "^3.3.11",
-    "inquirer": "^9.2.15"
+    "configstore": "^5.0.1",
+    "inquirer": "^8.2.6"
   }
 }
