@@ -33,7 +33,15 @@ const key = {
     }
   },
   remove() {
-    console.log("Hello from remove");
+    try {
+      const keyManager = new KeyManager();
+      keyManager.deleteKey();
+
+      console.log("Key removed".blue);
+      return key;
+    } catch (error) {
+      console.log(error.message.red);
+    }
   },
 };
 
