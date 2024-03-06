@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const KeyManager = require("../lib/KeyManager");
 const colors = require("colors");
+const { isRequired } = require("../utils/validation");
 
 const key = {
   async set() {
@@ -10,6 +11,7 @@ const key = {
         type: "input",
         name: "key",
         message: "Enter your API Key ".green + "https://coinmarketcap.com",
+        validate: isRequired,
       },
     ]);
 
